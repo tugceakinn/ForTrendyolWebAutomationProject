@@ -1,0 +1,6 @@
+{
+  "Language": "java",
+  "Plugins": [
+    "xml-report"
+  ]
+}

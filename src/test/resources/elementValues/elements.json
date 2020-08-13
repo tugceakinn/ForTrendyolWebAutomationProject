@@ -1,0 +1,42 @@
+[
+  {
+    "key": "girisYapButonu",
+    "value": "accountBtn",
+    "type": "id"
+  },
+  {
+    "key": "epostaAdresi",
+    "value": "email",
+    "type": "id"
+  },
+  {
+    "key": "sifre",
+    "value": "password",
+    "type": "id"
+  },
+  {
+    "key": "popup",
+    "value": "//*[@class='fancybox-item fancybox-close']",
+    "type": "xpath"
+  },
+  {
+    "key": "butikler",
+    "value": "//*[@id=\"browsing-gw-homepage\"]/div/div[2]/div[1]/div[1]/article",
+    "type": "xpath"
+  },
+  {
+    "key": "kategoriler",
+    "value": "#navigation-wrapper > nav > ul >li>a",
+    "type": "css"
+  },
+  {
+    "key": "girisYapilir",
+    "value": "loginSubmit",
+    "type": "id"
+  },
+  {
+    "key": "kadınTab",
+    "value": "//a[@class='category-header'][contains(text(),'KADIN')]",
+    "type": "xpath"
+  }
+]

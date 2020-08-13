@@ -1,0 +1,13 @@
+
+# Login olunur
+* Elementin yüklenmesini bekle ve tıkla "popup"
+* Elementin yüklenmesini bekle ve tıkla "girisYapButonu"
+* "test.trendyol@gmail.com" textini "epostaAdresi" elemente yaz
+* "trendyol1040" textini "sifre" elemente yaz
+* Elementin yüklenmesini bekle ve tıkla "girisYapilir"
+
+# Tablara tıklanır, fotoğraflar yüklenmiş mi kontrol edilir
+* Tablara tıklanır "kategoriler" fotoğraflar geliyor mu kontrol edilir "butikler" gelmiyorsa log basılır
+
+# Rastgele bir butik seçilir
+* Rastgele bir butik seçilir "butikler"
