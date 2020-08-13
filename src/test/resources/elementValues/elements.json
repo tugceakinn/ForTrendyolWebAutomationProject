@@ -20,7 +20,7 @@
     "type": "xpath"
   },
   {
-    "key": "butikler",
+    "key": "erkekButikler",
     "value": "//*[@id=\"browsing-gw-homepage\"]/div/div[2]/div[1]/div[1]/article",
     "type": "xpath"
   },
@@ -38,5 +38,51 @@
     "key": "kadınTab",
     "value": "//a[@class='category-header'][contains(text(),'KADIN')]",
     "type": "xpath"
+  },
+  {
+    "key": "erkekTab",
+    "value": "//a[@class='category-header'][contains(text(),'ERKEK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "cocukTab",
+    "value": "//a[@class='category-header'][contains(text(),'ÇOCUK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "evYasamTab",
+    "value": "//a[@class='category-header'][contains(text(),'EV & YAŞAM')]",
+    "type": "xpath"
+  },
+  {
+    "key": "superMarketTab",
+    "value": "//a[@class='category-header'][contains(text(),'SÜPERMARKET')]",
+    "type": "xpath"
+  },
+  {
+    "key": "kozmetikTab",
+    "value": "//a[@class='category-header'][contains(text(),'KOZMETİK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "ayakkabiCantaTab",
+    "value": "//a[@class='category-header'][contains(text(),'AYAKKABI & ÇANTA')]",
+    "type": "xpath"
+  },
+  {
+    "key": "saatAksesuarTab",
+    "value": "//a[@class='category-header'][contains(text(),'SAAT & AKSESUAR')]",
+    "type": "xpath"
+  },
+  {
+    "key": "elektronikTab",
+    "value": "//a[@class='category-header'][contains(text(),'ELEKTRONİK')]",
+    "type": "xpath"
+  },
+  {
+    "key": "ürünGörseli",
+    "value": "#boutique-detail-app > div > div:nth-child(2) > div > div",
+    "type": "css"
   }
+
 ]

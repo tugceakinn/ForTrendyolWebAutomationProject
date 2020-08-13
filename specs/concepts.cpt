@@ -6,8 +6,18 @@
 * "trendyol1040" textini "sifre" elemente yaz
 * Elementin yüklenmesini bekle ve tıkla "girisYapilir"
 
-# Tablara tıklanır, fotoğraflar yüklenmiş mi kontrol edilir
-* Tablara tıklanır "kategoriler" fotoğraflar geliyor mu kontrol edilir "butikler" gelmiyorsa log basılır
+# Tüm tablara tıklanır
+* Elementin yüklenmesini bekle ve tıkla "erkekTab"
+* Elementin yüklenmesini bekle ve tıkla "cocukTab"
+* Elementin yüklenmesini bekle ve tıkla "evYasamTab"
+* Elementin yüklenmesini bekle ve tıkla "superMarketTab"
+* Elementin yüklenmesini bekle ve tıkla "kozmetikTab"
+* Elementin yüklenmesini bekle ve tıkla "ayakkabiCantaTab"
+* Elementin yüklenmesini bekle ve tıkla "saatAksesuarTab"
+* Elementin yüklenmesini bekle ve tıkla "elektronikTab"
 
-# Rastgele bir butik seçilir
-* Rastgele bir butik seçilir "butikler"
+# Erkek tabına tıklanır ve butikler yüklenmemişse log basılır
+* Erkek tabına "erkekTab" tıklanır, butikler "erkekButikler" gelmiyorsa gelmiyorsa log basılır
+
+# Erkek tabından rastgele bir butik seçilir
+* Erkek tabından rastgele bir butik "erkekButikler" seçilir

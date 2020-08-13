@@ -5,6 +5,6 @@
 Senaryo
 ----------
 * Login olunur
-* Elementin yüklenmesini bekle ve tıkla "kadınTab"
- Tablara tıklanır, fotoğraflar yüklenmiş mi kontrol edilir
-* Rastgele bir butik seçilir
+* Tüm tablara tıklanır
+* Erkek tabına tıklanır ve butikler yüklenmemişse log basılır
+* Erkek tabından rastgele bir butik seçilir

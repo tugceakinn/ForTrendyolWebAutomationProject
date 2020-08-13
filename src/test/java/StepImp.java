@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class StepImp extends BaseTest{
+public class StepImp extends BaseTest {
 
     private static final int DEFAULT_MAX_ITERATION_COUNT = 75;
     private static final int DEFAULT_MILLISECOND_WAIT_AMOUNT = 200;
@@ -26,14 +26,14 @@ public class StepImp extends BaseTest{
             .getLogger(StepImp.class);
     private Actions actions = new Actions(driver);
 
-    public StepImp(){
+    public StepImp() {
 
         PropertyConfigurator
                 .configure(StepImp.class.getClassLoader().getResource("log4j.properties"));
     }
 
-    private WebElement findElement(String key){
-        try{
+    private WebElement findElement(String key) {
+        try {
             ElementInfo elementInfo = StoreHelper.INSTANCE.findElementInfoByKey(key);
             By infoParam = ElementHelper.getElementInfoToBy(elementInfo);
 
@@ -45,25 +45,7 @@ public class StepImp extends BaseTest{
                     "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})",
                     webElement);
             return webElement;
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private List<WebElement> findElementss(String key){
-        try{
-            ElementInfo elementInfo = StoreHelper.INSTANCE.findElementInfoByKey(key);
-            By infoParam = ElementHelper.getElementInfoToBy(elementInfo);
-
-            WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
-            List<WebElement> webElement = webDriverWait
-                    .until(ExpectedConditions.presenceOfAllElementsLocatedBy(infoParam));
-
-            ((JavascriptExecutor) driver).executeScript(
-                    "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})",
-                    webElement);
-            return webElement;
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
@@ -81,13 +63,13 @@ public class StepImp extends BaseTest{
 
     @Step({"Wait for element to load with <key> and click",
             "Elementin yüklenmesini bekle ve tıkla <key>"})
-    public WebElement getElementWithKeyIfExists(String key){
+    public WebElement getElementWithKeyIfExists(String key) {
         WebElement webElement;
         int loopCount = 0;
         while (loopCount < DEFAULT_MAX_ITERATION_COUNT) {
             try {
                 webElement = findElement(key);
-                if(webElement!=null){
+                if (webElement != null) {
                     logger.info(key + " elementi bulundu.");
                     actions.moveToElement(findElement(key));
                     actions.click();
@@ -106,7 +88,7 @@ public class StepImp extends BaseTest{
 
     @Step({"Wait <value> milliseconds",
             "<long> milisaniye bekle"})
-    public void waitByMilliSeconds(long milliseconds){
+    public void waitByMilliSeconds(long milliseconds) {
         try {
             logger.info(milliseconds + " milisaniye bekleniyor.");
             Thread.sleep(milliseconds);
@@ -117,7 +99,7 @@ public class StepImp extends BaseTest{
 
     @Step({"Write value <text> to element <key>",
             "<text> textini <key> elemente yaz"})
-    public void sendKeys(String text, String key){
+    public void sendKeys(String text, String key) {
         if (!key.equals("")) {
             findElement(key).sendKeys(text);
             logger.info(key + " elementine " + text + " texti yazıldı.");
@@ -126,7 +108,7 @@ public class StepImp extends BaseTest{
 
     @Step({"Check if element <key> contains text <expectedText>",
             "<key> elementi <text> değerini içeriyor mu kontrol et"})
-    public void checkElementContainsText(String key, String expectedText){
+    public void checkElementContainsText(String key, String expectedText) {
         Boolean containsText = findElement(key).getText().contains(expectedText);
         Assert.assertTrue("Expected text is not contained", containsText);
 
@@ -134,7 +116,7 @@ public class StepImp extends BaseTest{
 
     @Step({"Wait for element to load with key <key>",
             "Elementin yüklenmesini bekle <key>"})
-    public WebElement getElementloading(String key){
+    public WebElement getElementloading(String key) {
         WebElement webElement;
         int loopCount = 0;
         while (loopCount < DEFAULT_MAX_ITERATION_COUNT) {
@@ -151,27 +133,24 @@ public class StepImp extends BaseTest{
         return null;
     }
 
-    @Step("Tablara tıklanır <tab> fotoğraflar geliyor mu kontrol edilir <boutique> gelmiyorsa log basılır")
-    public void controlImage(String tab,String boutique) throws InterruptedException {
+    @Step("Erkek tabına <tab> tıklanır, butikler <boutique> gelmiyorsa gelmiyorsa log basılır")
+    public void tabClick(String tab, String boutique) throws InterruptedException {
 
-        List<WebElement> tabList = findElementsByKey(tab);
-        for(int i=0;i<tabList.size();i++){
-            WebElement getCategory=tabList.get(i);
-            getCategory.click();
-            //List<WebElement> imageList = findElementsByKey(boutique);
-            List<WebElement> imageList = driver.findElements(By.cssSelector("//*[@id=\"browsing-gw-homepage\"]/div/div[2]/div[1]/div[1]/article"));
-            if(imageList.size()>0){
+            findElement(tab).click();
+            List<WebElement> imageList = findElementsByKey(boutique);
+
+            if (imageList.size() > 0) {
                 logger.info("Fotoğraflar yüklendi!");
-            }else{
+            } else {
                 logger.info("Fotoğraflar yüklenemedi!");
             }
         }
-    }
 
-    @Step("Rastgele bir butik seçilir <boutiqueSelect>")
-    public void clickTab(String boutiqueSelect){
 
-        List<WebElement> boutiqueList = findElementsByKey(boutiqueSelect);
+    @Step("Erkek tabından rastgele bir butik <boyBoutique> seçilir")
+    public void randomClickBoutique(String boyBoutique) {
+
+        List<WebElement> boutiqueList = findElementsByKey(boyBoutique);
         int randomBoutique = randomNumber(0, boutiqueList.size());
 
         WebElement getBoutique = boutiqueList.get(randomBoutique);
@@ -179,4 +158,7 @@ public class StepImp extends BaseTest{
         getBoutique.click();
 
     }
+
 }
+
+
