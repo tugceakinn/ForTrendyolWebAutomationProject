@@ -37,7 +37,7 @@ public class StepImp extends BaseTest {
             ElementInfo elementInfo = StoreHelper.INSTANCE.findElementInfoByKey(key);
             By infoParam = ElementHelper.getElementInfoToBy(elementInfo);
 
-            WebDriverWait webDriverWait = new WebDriverWait(driver, 75);
+            WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
             WebElement webElement = webDriverWait
                     .until(ExpectedConditions.presenceOfElementLocated(infoParam));
 
@@ -116,7 +116,7 @@ public class StepImp extends BaseTest {
 
     @Step({"Wait for element to load with key <key>",
             "Elementin yüklenmesini bekle <key>"})
-    public WebElement getElementloading(String key) {
+    public WebElement waitElementloading(String key) {
         WebElement webElement;
         int loopCount = 0;
         while (loopCount < DEFAULT_MAX_ITERATION_COUNT) {
@@ -133,21 +133,20 @@ public class StepImp extends BaseTest {
         return null;
     }
 
-    @Step("Erkek tabına <tab> tıklanır, butikler <boutique> gelmiyorsa gelmiyorsa log basılır")
+    @Step("Erkek tabına <tab> tıklanır, butikler <boutique> gelmiyorsa log basılır")
     public void tabClick(String tab, String boutique) throws InterruptedException {
 
             findElement(tab).click();
             List<WebElement> imageList = findElementsByKey(boutique);
 
             if (imageList.size() > 0) {
-                logger.info("Fotoğraflar yüklendi!");
+                logger.info("Butikler yüklendi!");
             } else {
-                logger.info("Fotoğraflar yüklenemedi!");
+                logger.info("Butikler yüklenemedi!");
             }
         }
 
-
-    @Step("Erkek tabından rastgele bir butik <boyBoutique> seçilir")
+    @Step("Erkek tabına tıklandıktan sonra rastgele bir butik <boyBoutique> seçilir")
     public void randomClickBoutique(String boyBoutique) {
 
         List<WebElement> boutiqueList = findElementsByKey(boyBoutique);
@@ -156,6 +155,18 @@ public class StepImp extends BaseTest {
         WebElement getBoutique = boutiqueList.get(randomBoutique);
 
         getBoutique.click();
+
+    }
+
+    @Step("Rastgele bir ürün görseline <image> tıklanır")
+    public void randomClickImage(String image) {
+
+        List<WebElement> imageList = findElementsByKey(image);
+        int randomImageNumber = randomNumber(0, imageList.size());
+
+        WebElement getImage = imageList.get(randomImageNumber);
+
+        getImage.click();
 
     }
 

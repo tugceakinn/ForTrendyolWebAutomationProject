@@ -16,7 +16,7 @@
   },
   {
     "key": "popup",
-    "value": "//*[@class='fancybox-item fancybox-close']",
+    "value": "//span[@class='homepage-popup-gender'][contains(text(),'ERKEK')]",
     "type": "xpath"
   },
   {
@@ -82,6 +82,26 @@
   {
     "key": "ürünGörseli",
     "value": "#boutique-detail-app > div > div:nth-child(2) > div > div",
+    "type": "css"
+  },
+  {
+    "key": "urunGorselleri",
+    "value": "#search-app > div > div > div:nth-child(2) > div:nth-child(3) > div > div ",
+    "type": "css"
+  },
+  {
+    "key": "erkekIlkButik",
+    "value": "//img[@src='https://cdn.dsmcdn.com/assets/t/y/Creative/ds/Automation/BrandBoutique/2020/3/26/SneakerFirsatlari_section2_202003261005_webBig.jpg']",
+    "type": "xpath"
+  },
+  {
+    "key": "sepeteEkleButon",
+    "value": "//div[@class='add-to-bs-tx'][contains(text(),'Sepete Ekle')]",
+    "type": "xpath"
+  },
+  {
+    "key": "tablar",
+    "value": "#navigation-wrapper > nav > ul > li",
     "type": "css"
   }
 

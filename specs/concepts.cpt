@@ -1,4 +1,3 @@
-
 # Login olunur
 * Elementin yüklenmesini bekle ve tıkla "popup"
 * Elementin yüklenmesini bekle ve tıkla "girisYapButonu"
@@ -17,7 +16,17 @@
 * Elementin yüklenmesini bekle ve tıkla "elektronikTab"
 
 # Erkek tabına tıklanır ve butikler yüklenmemişse log basılır
-* Erkek tabına "erkekTab" tıklanır, butikler "erkekButikler" gelmiyorsa gelmiyorsa log basılır
+* Erkek tabına "erkekTab" tıklanır, butikler "erkekButikler" gelmiyorsa log basılır
 
 # Erkek tabından rastgele bir butik seçilir
-* Erkek tabından rastgele bir butik "erkekButikler" seçilir
+* Erkek tabına tıklandıktan sonra rastgele bir butik "erkekButikler" seçilir
+
+# Sayfadaki ilk butiğe tıklanır
+* Elementin yüklenmesini bekle ve tıkla "erkekTab"
+* Elementin yüklenmesini bekle ve tıkla "erkekIlkButik"
+
+# Rastgele bir ürün görseline tıklanır
+* Rastgele bir ürün görseline "urunGorselleri" tıklanır
+
+# Ürün sepete eklenir
+* Elementin yüklenmesini bekle ve tıkla "sepeteEkleButon"
