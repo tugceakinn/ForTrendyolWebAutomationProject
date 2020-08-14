@@ -103,6 +103,11 @@
     "key": "tablar",
     "value": "#navigation-wrapper > nav > ul > li",
     "type": "css"
+  },
+  {
+    "key": "sepetim",
+    "value": "//span[@id='basketItemCount'][contains(text(),'5')]",
+    "type": "xpath"
   }
 
 ]

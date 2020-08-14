@@ -1,6 +1,7 @@
 import WebAutomationBase.helper.ElementHelper;
 import WebAutomationBase.helper.StoreHelper;
 import WebAutomationBase.model.ElementInfo;
+import com.thoughtworks.gauge.Logger;
 import com.thoughtworks.gauge.Step;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
@@ -106,12 +107,14 @@ public class StepImp extends BaseTest {
         }
     }
 
-    @Step({"Check if element <key> contains text <expectedText>",
-            "<key> elementi <text> değerini içeriyor mu kontrol et"})
-    public void checkElementContainsText(String key, String expectedText) {
-        Boolean containsText = findElement(key).getText().contains(expectedText);
-        Assert.assertTrue("Expected text is not contained", containsText);
-
+    @Step("Sepete ürün <key> eklenmiş mi kontrol et")
+    public void controlBasket(String key) {
+        int miktar = Integer.parseInt(findElement(key).getText());
+        if(miktar>0){
+            Logger.info("Sepette ürün var!");
+        }else{
+            logger.info("Sepette ürün yok!");
+        }
     }
 
     @Step({"Wait for element to load with key <key>",

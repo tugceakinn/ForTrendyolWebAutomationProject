@@ -10,6 +10,7 @@ Senaryo
 * Sayfadaki ilk butiğe tıklanır
 * Rastgele bir ürün görseline tıklanır
 * Ürün sepete eklenir
+* Sepete ürün eklenmiş mi kontrol edilir
 
 Senaryo2
 -----------

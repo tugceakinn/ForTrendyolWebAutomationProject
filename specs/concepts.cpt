@@ -30,3 +30,6 @@
 
 # Ürün sepete eklenir
 * Elementin yüklenmesini bekle ve tıkla "sepeteEkleButon"
+
+# Sepete ürün eklenmiş mi kontrol edilir
+* Sepete ürün "sepetim" eklenmiş mi kontrol et
